@@ -1,0 +1,182 @@
+/* ===== Variables ===== */
+:root {
+  --clay: #b5654a;
+  --clay-dark: #8f4a34;
+  --cream: #faf5ef;
+  --card-bg: #ffffff;
+  --text-main: #2e2622;
+  --text-muted: #7a6f68;
+  --border: #ece2d9;
+  --radius: 14px;
+  --shadow: 0 4px 16px rgba(46, 38, 34, 0.06);
+}
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--cream);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+a {
+  color: var(--clay-dark);
+}
+
+/* ===== Hero / Header ===== */
+.hero {
+  background: linear-gradient(135deg, var(--clay), var(--clay-dark));
+  color: #fff;
+  padding: 64px 24px 56px;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow);
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hero .title {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== Main layout ===== */
+main {
+  max-width: 720px;
+  margin: -32px auto 48px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 32px;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--clay-dark);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+.card p {
+  color: var(--text-main);
+}
+
+.muted {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ===== Education ===== */
+.entry h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.entry .meta {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+/* ===== Lists ===== */
+.skills-list,
+.volunteer-list,
+.hobbies-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.volunteer-list,
+.hobbies-list {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skills-list li {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  color: var(--clay-dark);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.volunteer-list li,
+.hobbies-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.volunteer-list li::before,
+.hobbies-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--clay);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .hero {
+    padding: 48px 16px 40px;
+  }
+
+  .card {
+    padding: 22px 20px;
+  }
+}
