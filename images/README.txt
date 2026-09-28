@@ -1,5 +1,3 @@
-Add your profile photo here and name it "profile.jpg" (or update the filename
-in index.html's <img src="images/profile.jpg"> tag to match whatever you use).
-
-Recommended: a square-ish photo, at least 300x300px, so it crops nicely into
-the circular frame in the header.
+avatar.svg is the profile image used on the page (a simple generated avatar,
+not a real photo). If you'd rather use a real photo, add it here and update
+the <img src="..."> line in index.html to point to it.
