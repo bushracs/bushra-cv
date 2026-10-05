@@ -8,7 +8,16 @@
 </head>
 <body>
 
+  <!-- welcome message (the text is added by script.js when the page loads) -->
+  <div id="welcome-banner" class="welcome-banner hidden">
+    <span id="welcome-text"></span>
+    <button type="button" id="welcome-close">Close</button>
+  </div>
+
   <header>
+    <!-- dark mode / light mode button -->
+    <button type="button" id="theme-btn" class="theme-btn">Dark Mode</button>
+
     <img src="images/avatar.svg" alt="Profile avatar" class="avatar">
     <h1>Bushra</h1>
     <p class="subtitle">MICT Student | American University in Cairo</p>
@@ -33,14 +42,19 @@
     </section>
 
     <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Business &amp; IT fundamentals</li>
-        <li>Problem solving</li>
-        <li>Project management basics</li>
-      </ul>
+      <div class="section-top">
+        <h2>Skills</h2>
+        <button type="button" class="toggle-btn" data-target="skills-content" data-name="Skills">Hide Skills</button>
+      </div>
+      <div id="skills-content">
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Business &amp; IT fundamentals</li>
+          <li>Problem solving</li>
+          <li>Project management basics</li>
+        </ul>
+      </div>
     </section>
 
     <section id="experience">
@@ -52,6 +66,31 @@
       </ul>
     </section>
 
+    <section id="projects">
+      <div class="section-top">
+        <h2>Projects</h2>
+        <button type="button" class="toggle-btn" data-target="projects-content" data-name="Projects">Hide Projects</button>
+      </div>
+      <div id="projects-content">
+
+        <!-- the details of each project are added by script.js when the button is clicked -->
+        <div class="project">
+          <h3>Kutrah Clay Studio Website</h3>
+          <p>A website for a small independent clay and ceramic art studio.</p>
+          <button type="button" class="details-btn" data-project="kutrah">Show Details</button>
+          <div id="kutrah-details" class="project-details"></div>
+        </div>
+
+        <div class="project">
+          <h3>Personal CV Webpage</h3>
+          <p>This page, made for the Design of Web-Based Systems course.</p>
+          <button type="button" class="details-btn" data-project="cv">Show Details</button>
+          <div id="cv-details" class="project-details"></div>
+        </div>
+
+      </div>
+    </section>
+
     <section id="hobbies">
       <h2>Hobbies</h2>
       <ul>
@@ -60,8 +99,13 @@
     </section>
 
     <section id="certifications">
-      <h2>Certifications &amp; Achievements</h2>
-      <p>None yet - will add here as I complete certifications.</p>
+      <div class="section-top">
+        <h2>Certifications &amp; Achievements</h2>
+        <button type="button" class="toggle-btn" data-target="certifications-content" data-name="Certifications">Hide Certifications</button>
+      </div>
+      <div id="certifications-content">
+        <p>None yet - will add here as I complete certifications.</p>
+      </div>
     </section>
 
     <section id="contact">
@@ -72,8 +116,9 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Bushra | Design of Web-Based Systems - Assignment 1</p>
+    <p>&copy; 2026 Bushra | Design of Web-Based Systems - Assignment 2</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

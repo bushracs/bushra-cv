@@ -88,6 +88,163 @@ footer {
   font-size: 0.85rem;
 }
 
+/* ---------- Assignment 2: styles for the JavaScript features ---------- */
+
+/* used by script.js to hide things */
+.hidden {
+  display: none;
+}
+
+/* buttons */
+
+button {
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.toggle-btn,
+.details-btn {
+  background-color: white;
+  color: #8f4a34;
+  border: 1px solid #b5654a;
+  padding: 5px 12px;
+}
+
+.toggle-btn:hover,
+.details-btn:hover {
+  background-color: #b5654a;
+  color: white;
+}
+
+/* welcome message */
+
+.welcome-banner {
+  background-color: #8f4a34;
+  color: white;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+.welcome-banner button {
+  background: none;
+  color: white;
+  border: 1px solid white;
+  padding: 2px 10px;
+  margin-left: 10px;
+}
+
+/* dark mode button in the header */
+
+header {
+  position: relative;
+}
+
+.theme-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: white;
+  color: #8f4a34;
+  border: none;
+  padding: 6px 14px;
+}
+
+/* heading row with a show/hide button next to it */
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.section-top h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* projects */
+
+.project {
+  margin-bottom: 18px;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+.project p {
+  margin-bottom: 8px;
+}
+
+.project-details ul {
+  margin-top: 10px;
+  padding: 12px 15px 6px 32px;
+  background-color: #f7f2ec;
+  border-left: 3px solid #b5654a;
+  border-radius: 4px;
+}
+
+/* dark mode (script.js adds the dark-mode class to the body) */
+
+body.dark-mode {
+  background-color: #1f1a17;
+  color: #eee6df;
+}
+
+body.dark-mode header {
+  background-color: #8f4a34;
+}
+
+body.dark-mode .welcome-banner {
+  background-color: #6b3626;
+}
+
+body.dark-mode section {
+  background-color: #2c2521;
+  box-shadow: none;
+}
+
+body.dark-mode section h2 {
+  color: #e39a7d;
+  border-bottom-color: #453a34;
+}
+
+body.dark-mode .section-top {
+  border-bottom-color: #453a34;
+}
+
+body.dark-mode a {
+  color: #e39a7d;
+}
+
+body.dark-mode .toggle-btn,
+body.dark-mode .details-btn {
+  background-color: #2c2521;
+  color: #e39a7d;
+  border-color: #e39a7d;
+}
+
+body.dark-mode .toggle-btn:hover,
+body.dark-mode .details-btn:hover {
+  background-color: #b5654a;
+  color: white;
+}
+
+body.dark-mode .project-details ul {
+  background-color: #1f1a17;
+}
+
+body.dark-mode footer {
+  color: #a89b92;
+}
+
 /* small screens */
 
 @media (max-width: 480px) {
@@ -97,5 +254,11 @@ footer {
 
   section {
     padding: 15px;
+  }
+
+  /* put the show/hide button under the heading */
+  .section-top {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
