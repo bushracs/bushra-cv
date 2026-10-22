@@ -5,9 +5,63 @@
     </clipPath>
   </defs>
   <g clip-path="url(#circleClip)">
-    <rect width="200" height="200" fill="#b5654a"/>
-    <circle cx="100" cy="76" r="40" fill="#1a1a1a"/>
-    <circle cx="100" cy="82" r="34" fill="#c17f56"/>
-    <ellipse cx="100" cy="194" rx="70" ry="60" fill="#faf5ef"/>
+    <!-- background -->
+    <rect width="200" height="200" fill="#ecd3bf"/>
+
+    <!-- long straight hair (back) -->
+    <path d="M100 30 C64 30 47 56 47 92 L45 178 C64 184 136 184 155 178 L153 92 C153 56 136 30 100 30 Z" fill="#17120f"/>
+
+    <!-- neck -->
+    <rect x="89" y="118" width="22" height="30" rx="6" fill="#b47a58"/>
+
+    <!-- white top -->
+    <path d="M38 200 C40 164 64 147 100 147 C136 147 160 164 162 200 Z" fill="#f7f1ea"/>
+    <path d="M88 147 Q100 160 112 147" fill="#b47a58"/>
+
+    <!-- cardigan -->
+    <path d="M38 200 C40 166 60 150 84 147 L93 200 Z" fill="#7d8f74"/>
+    <path d="M162 200 C160 166 140 150 116 147 L107 200 Z" fill="#7d8f74"/>
+
+    <!-- bag strap -->
+    <path d="M70 152 L60 200" stroke="#6e4630" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- hair falling in front of the shoulders -->
+    <path d="M54 98 C52 130 52 160 55 184 L71 182 C68 152 68 122 70 100 Z" fill="#17120f"/>
+    <path d="M146 98 C148 130 148 160 145 184 L129 182 C132 152 132 122 130 100 Z" fill="#17120f"/>
+
+    <!-- face -->
+    <ellipse cx="100" cy="92" rx="31" ry="37" fill="#c98e6b"/>
+
+    <!-- hair on top, parted in the middle -->
+    <path d="M64 100 C60 64 78 48 100 48 C122 48 140 64 136 100 C132 80 120 64 102 58 L100 62 L98 58 C80 64 68 80 64 100 Z" fill="#17120f"/>
+    <!-- shine on the hair -->
+    <path d="M80 56 C74 62 70 70 68 78" stroke="#4a3b32" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- eyebrows -->
+    <path d="M79 81 Q86 77 94 80" stroke="#17120f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M106 80 Q114 77 121 81" stroke="#17120f" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- eyes -->
+    <ellipse cx="87" cy="92" rx="6.5" ry="4.8" fill="#ffffff"/>
+    <ellipse cx="113" cy="92" rx="6.5" ry="4.8" fill="#ffffff"/>
+    <circle cx="87" cy="92.5" r="3.8" fill="#5b3520"/>
+    <circle cx="113" cy="92.5" r="3.8" fill="#5b3520"/>
+    <circle cx="87" cy="92.5" r="1.8" fill="#120b07"/>
+    <circle cx="113" cy="92.5" r="1.8" fill="#120b07"/>
+    <circle cx="88.3" cy="91.2" r="1" fill="#ffffff"/>
+    <circle cx="114.3" cy="91.2" r="1" fill="#ffffff"/>
+    <!-- eyelashes line -->
+    <path d="M80 91 Q87 85.5 94.5 90.5" stroke="#17120f" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M105.5 90.5 Q113 85.5 120 91" stroke="#17120f" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+    <!-- nose -->
+    <path d="M100 96 Q97.5 104 101 106" stroke="#a46a4b" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- cheeks -->
+    <circle cx="79" cy="106" r="5.5" fill="#e0806f" opacity="0.3"/>
+    <circle cx="121" cy="106" r="5.5" fill="#e0806f" opacity="0.3"/>
+
+    <!-- smile -->
+    <path d="M91 114 Q100 121.5 109 114 Q100 117 91 114 Z" fill="#a9483f"/>
   </g>
 </svg>
