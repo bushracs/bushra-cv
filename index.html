@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bushra - MICT Student</title>
+  <title>Bushra - MICT Student | Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,19 +14,48 @@
     <button type="button" id="welcome-close">Close</button>
   </div>
 
-  <header>
+  <!-- navigation menu -->
+  <nav class="navbar">
+    <a href="#home" class="logo">Bushra</a>
+
+    <button type="button" id="menu-btn" class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+
+    <ul id="nav-links" class="nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
     <!-- dark mode / light mode button -->
     <button type="button" id="theme-btn" class="theme-btn">Dark Mode</button>
+  </nav>
 
+  <!-- home -->
+  <header id="home" class="hero">
     <img src="images/avatar.svg" alt="Profile avatar" class="avatar">
     <h1>Bushra</h1>
     <p class="subtitle">MICT Student | American University in Cairo</p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-light">See my projects</a>
+      <a href="#contact" class="btn btn-outline">Contact me</a>
+    </div>
+
+    <!-- quote box (filled by api.js using a quotes API) -->
+    <div class="quote-box">
+      <p class="quote-label">Quote of the moment</p>
+      <p id="quote-text" class="quote-text">Loading quote...</p>
+      <p id="quote-author" class="quote-author"></p>
+      <button type="button" id="quote-btn" class="btn btn-small">New Quote</button>
+    </div>
   </header>
 
   <main>
 
     <section id="about">
-      <h2>Profile</h2>
+      <h2>About Me</h2>
       <p>
         I'm a university student studying Management of Information and Communication
         Technology (MICT) at the American University in Cairo. MICT combines business
@@ -73,20 +102,31 @@
       </div>
       <div id="projects-content">
 
+        <h3 class="sub-heading">Featured Projects</h3>
+
         <!-- the details of each project are added by script.js when the button is clicked -->
-        <div class="project">
-          <h3>Kutrah Clay Studio Website</h3>
-          <p>A website for a small independent clay and ceramic art studio.</p>
-          <button type="button" class="details-btn" data-project="kutrah">Show Details</button>
-          <div id="kutrah-details" class="project-details"></div>
+        <div class="project-grid">
+          <div class="project">
+            <h4>Kutrah Clay Studio Website</h4>
+            <p>A website for a small independent clay and ceramic art studio.</p>
+            <button type="button" class="details-btn" data-project="kutrah">Show Details</button>
+            <div id="kutrah-details" class="project-details"></div>
+          </div>
+
+          <div class="project">
+            <h4>Personal CV Webpage</h4>
+            <p>This website, made for the Design of Web-Based Systems course.</p>
+            <button type="button" class="details-btn" data-project="cv">Show Details</button>
+            <div id="cv-details" class="project-details"></div>
+          </div>
         </div>
 
-        <div class="project">
-          <h3>Personal CV Webpage</h3>
-          <p>This page, made for the Design of Web-Based Systems course.</p>
-          <button type="button" class="details-btn" data-project="cv">Show Details</button>
-          <div id="cv-details" class="project-details"></div>
-        </div>
+        <h3 class="sub-heading">My GitHub Repositories</h3>
+        <p class="note">Loaded live from the GitHub API.</p>
+
+        <!-- filled by api.js using the GitHub API -->
+        <p id="repo-status" class="status-msg">Loading repositories...</p>
+        <div id="repo-list" class="repo-grid"></div>
 
       </div>
     </section>
@@ -111,14 +151,16 @@
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:bushrahitlan@gmail.com">bushrahitlan@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/bushracs" target="_blank" rel="noopener">github.com/bushracs</a></p>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Bushra | Design of Web-Based Systems - Assignment 2</p>
+    <p>&copy; 2026 Bushra | Design of Web-Based Systems - Assignment 3</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="api.js"></script>
 </body>
 </html>

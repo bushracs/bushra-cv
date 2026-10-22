@@ -1,10 +1,12 @@
 // script.js
-// Design of Web-Based Systems - Assignment 2
-// Adds four interactive features to my CV page:
+// Design of Web-Based Systems - Assignments 2 and 3
+// Interactive features of my portfolio page:
 //   1. Welcome message when the page loads
 //   2. Show/Hide buttons for Skills, Projects and Certifications
 //   3. Dark mode / light mode button
 //   4. Project details that are added to the page when a button is clicked
+//   5. Navigation menu (mobile Menu button + highlighting the current section)
+// The API features (GitHub repositories and quotes) are in api.js.
 
 
 // ---------- project data ----------
@@ -20,7 +22,7 @@ const projects = {
     'Course: Design of Web-Based Systems',
     'Tools: HTML, CSS and JavaScript',
     'Hosting: GitHub Pages',
-    'Features: show/hide sections, dark mode, welcome message and project details'
+    'Features: dark mode, show/hide sections, welcome message, project details and live data from the GitHub and quotes APIs'
   ]
 };
 
@@ -120,14 +122,80 @@ function toggleProjectDetails(event) {
 }
 
 
+// ---------- 5. navigation menu ----------
+
+// Opens or closes the menu on small screens.
+function toggleMenu() {
+  const menuButton = document.getElementById('menu-btn');
+  const links = document.getElementById('nav-links');
+
+  links.classList.toggle('open');
+
+  if (links.classList.contains('open')) {
+    menuButton.textContent = 'Close';
+    menuButton.setAttribute('aria-expanded', 'true');
+  } else {
+    menuButton.textContent = 'Menu';
+    menuButton.setAttribute('aria-expanded', 'false');
+  }
+}
+
+// Closes the menu after a link is clicked (only matters on small screens).
+function closeMenu() {
+  const links = document.getElementById('nav-links');
+
+  if (links.classList.contains('open')) {
+    toggleMenu();
+  }
+}
+
+// Highlights the menu link of the section that is on the screen.
+function highlightCurrentSection() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  let currentId = 'home';
+
+  // the last section whose top has passed the menu is the current one
+  for (let i = 0; i < navLinks.length; i++) {
+    const id = navLinks[i].getAttribute('href').substring(1);
+    const section = document.getElementById(id);
+
+    if (section.getBoundingClientRect().top <= 120) {
+      currentId = id;
+    }
+  }
+
+  // at the very bottom of the page, the last link (Contact) should be active
+  if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 5) {
+    currentId = 'contact';
+  }
+
+  for (let i = 0; i < navLinks.length; i++) {
+    if (navLinks[i].getAttribute('href') === '#' + currentId) {
+      navLinks[i].classList.add('active');
+    } else {
+      navLinks[i].classList.remove('active');
+    }
+  }
+}
+
+
 // ---------- event listeners ----------
 
 // Runs when the page has finished loading.
 document.addEventListener('DOMContentLoaded', function () {
   showWelcomeMessage();
+  highlightCurrentSection();
 
   document.getElementById('welcome-close').addEventListener('click', closeWelcomeMessage);
   document.getElementById('theme-btn').addEventListener('click', toggleTheme);
+  document.getElementById('menu-btn').addEventListener('click', toggleMenu);
+  window.addEventListener('scroll', highlightCurrentSection);
+
+  // every menu link
+  const navLinks = document.querySelectorAll('.nav-link');
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', closeMenu);
+  }
 
   // every Show/Hide button
   const toggleButtons = document.querySelectorAll('.toggle-btn');
